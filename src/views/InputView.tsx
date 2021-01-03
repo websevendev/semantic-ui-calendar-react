@@ -83,6 +83,8 @@ interface InputViewProps {
   onClear?: (e: React.SyntheticEvent<HTMLElement>, data: any) => void;
   /** Whether to close a popup when cursor leaves it. */
   closeOnMouseLeave?: boolean;
+  /** Whether to close a popup when scrolling. */
+  closeOnScroll?: boolean;
   /** A field can have its label next to instead of above it. */
   inlineLabel?: boolean;
   /** Using the clearable setting will let users remove their selection from a calendar. */
@@ -125,12 +127,15 @@ interface InputViewProps {
   readOnly?: boolean;
   /** Try to prevent mobile keyboard appearing. */
   hideMobileKeyboard?: boolean;
+  /** Additional props for semantic-ui-react Popup. */
+  popupProps?: object;
 }
 
 class InputView extends React.Component<InputViewProps, any> {
   public static defaultProps = {
     inline: false,
     closeOnMouseLeave: true,
+    closeOnScroll: true,
     tabIndex: '0',
     clearable: false,
     clearIcon: 'remove',
@@ -192,6 +197,7 @@ class InputView extends React.Component<InputViewProps, any> {
       inline,
       value,
       closeOnMouseLeave,
+      closeOnScroll,
       onChange,
       onClear,
       children,
@@ -210,6 +216,7 @@ class InputView extends React.Component<InputViewProps, any> {
       icon,
       readOnly,
       hideMobileKeyboard,
+      popupProps,
       ...rest
     } = this.props;
 
@@ -270,6 +277,7 @@ class InputView extends React.Component<InputViewProps, any> {
             context={this.inputNode}
             on='hover'
             mountNode={mountNode}
+            {...popupProps}
           >
             <div
               onBlur={this.onBlur}
@@ -289,8 +297,10 @@ class InputView extends React.Component<InputViewProps, any> {
   }
 
   public scrollListener = () => {
-    const { closePopup } = this.props;
-    closePopup();
+    const { closeOnScroll, closePopup } = this.props;
+    if(closeOnScroll) {
+      closePopup();
+    }
   }
 
   private setScrollListener() {
