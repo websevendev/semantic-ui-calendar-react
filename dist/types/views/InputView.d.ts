@@ -40,7 +40,7 @@ interface InputViewProps {
     /** Duration of the CSS transition animation in milliseconds. */
     duration?: number;
     /** Named animation event to used. Must be defined in CSS. */
-    animation?: SemanticTRANSITIONS;
+    animation?: SemanticTRANSITIONS | 'none';
     /** Where to display popup. */
     popupPosition?: 'top left' | 'top right' | 'bottom right' | 'bottom left' | 'right center' | 'left center' | 'top center' | 'bottom center';
     /** Currently selected value. */

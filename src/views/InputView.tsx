@@ -16,7 +16,7 @@ import checkMobile from '../lib/checkMobile';
 
 const popupStyle = {
   padding: '0',
-  filter: 'none', // prevents bluring popup when used inside Modal with dimmer="bluring" #28 #26
+  filter: 'none', // prevents blurring popup when used inside Modal with dimmer="blurring" #28 #26
 };
 
 class FormInputWithRef extends React.Component<FormInputProps, any> {
@@ -106,7 +106,7 @@ interface InputViewProps {
   /** Duration of the CSS transition animation in milliseconds. */
   duration?: number;
   /** Named animation event to used. Must be defined in CSS. */
-  animation?: SemanticTRANSITIONS;
+  animation?: SemanticTRANSITIONS | 'none';
   /** Where to display popup. */
   popupPosition?:
   | 'top left'

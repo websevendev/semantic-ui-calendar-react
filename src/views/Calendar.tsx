@@ -35,7 +35,7 @@ class Calendar extends React.Component<CalendarProps, any> {
     const style = {
       width: pickerWidth,
       minWidth: '22em',
-      // Prevent poped up picker from beeing outlined on focus.
+      // Prevent popped up picker from being outlined on focus.
       // Inline picker should be outlined when in focus.
       outline: outlineOnFocus ? undefined : 'none',
       ...pickerStyle,
