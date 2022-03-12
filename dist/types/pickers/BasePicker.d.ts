@@ -98,9 +98,9 @@ declare abstract class BasePicker<P extends BasePickerProps> extends React.Compo
     protected handleEnterKeyPress: (event: KeyboardEvent) => void;
     protected handleBlur: () => void;
     protected handleArrowKeyPress: (event: KeyboardEvent) => void;
-    /** Return a position of a value (date, year, month ...) with wich a calendar was initialized. */
+    /** Return a position of a value (date, year, month ...) with which a calendar was initialized. */
     protected abstract getInitialDatePosition(): number;
-    /** Creates values with wich calendar filled. */
+    /** Creates values with which calendar filled. */
     protected abstract buildCalendarValues(): string[];
     /** Handles currently selected value change. */
     protected abstract handleChange(e: React.SyntheticEvent<HTMLElement>, data: HandleChangeParams): void;

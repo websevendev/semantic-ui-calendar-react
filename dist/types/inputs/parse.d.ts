@@ -7,7 +7,7 @@ export declare const TIME_FORMAT: {
 declare type ParseValueData = string | moment.Moment | Date;
 /** Parse string, moment, Date.
  *
- * Return unedfined on invalid input.
+ * Return undefined on invalid input.
  */
 export declare function parseValue(value: ParseValueData, dateFormat: string, localization: string): moment.Moment;
 declare type ParseArrayOrValueData = ParseValueData | ParseValueData[];
@@ -33,7 +33,7 @@ interface GetInitializerParams {
 /** Create moment.
  *
  * Creates moment using `dateParams` or `initialDate` arguments (if provided).
- * Precedense order: dateParams -> initialDate -> default value
+ * Precedence order: dateParams -> initialDate -> default value
  */
 export declare function getInitializer(context: GetInitializerParams): moment.Moment;
 declare type InitialDate = string | moment.Moment | Date;

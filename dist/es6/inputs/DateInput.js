@@ -67,7 +67,7 @@ var DateInput = /** @class */ (function (_super) {
     function DateInput(props) {
         var _this = _super.call(this, props) || this;
         _this.componentDidUpdate = function (prevProps) {
-            // update internal date if ``value`` prop changed and successuffly parsed
+            // update internal date if ``value`` prop changed and successfully parsed
             if (prevProps.value !== _this.props.value) {
                 var parsed = parseValue(_this.props.value, _this.props.dateFormat, _this.props.localization);
                 if (parsed) {

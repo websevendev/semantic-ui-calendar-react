@@ -46,7 +46,7 @@ exports.parseArrayOrValue = parseArrayOrValue;
 /** Create moment.
  *
  * Creates moment using `dateParams` or `initialDate` arguments (if provided).
- * Precedense order: dateParams -> initialDate -> default value
+ * Precedence order: dateParams -> initialDate -> default value
  */
 function getInitializer(context) {
     var dateParams = context.dateParams, initialDate = context.initialDate, dateFormat = context.dateFormat, localization = context.localization;

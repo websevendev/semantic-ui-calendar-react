@@ -18,7 +18,7 @@ type ParseValueData =
 
 /** Parse string, moment, Date.
  *
- * Return unedfined on invalid input.
+ * Return undefined on invalid input.
  */
 export function parseValue(value: ParseValueData, dateFormat: string, localization: string): moment.Moment {
   if (!isNil(value) && !isNil(dateFormat)) {
