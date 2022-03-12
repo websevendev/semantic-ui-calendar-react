@@ -70,7 +70,7 @@ interface GetInitializerParams {
 /** Create moment.
  *
  * Creates moment using `dateParams` or `initialDate` arguments (if provided).
- * Precedense order: dateParams -> initialDate -> default value
+ * Precedence order: dateParams -> initialDate -> default value
  */
 export function getInitializer(context: GetInitializerParams): moment.Moment {
   const {
