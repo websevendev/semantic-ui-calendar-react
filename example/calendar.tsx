@@ -7,6 +7,7 @@ import {
   Form,
   Header,
   Icon,
+  Grid,
 } from 'semantic-ui-react';
 
 import {
@@ -45,23 +46,31 @@ class App extends React.Component<any, any> {
 
   public render() {
     return (
-      <div className='example-calendar-container'>
-        <Header as='h2' dividing>
-          As text fields
-          <Header.Subheader>
-            <Checkbox
-              label='Make data inputs clearable'
-              checked={this.state.clearable}
-              onChange={this.handleCheckboxChange.bind(this)}
-            />
-          </Header.Subheader>
-        </Header>
-
-        <DateTimeForm clearable={this.state.clearable}
-        />
-        <h2>Inline</h2>
-        <DateTimeFormInline />
-      </div>
+      <Grid
+        className='example-calendar-container'
+        columns='equal'
+        stackable
+        container
+        style={{padding: '2em 0'}}
+      >
+        <Grid.Column>
+          <Header as='h2' dividing>
+            As text fields
+            <Header.Subheader>
+              <Checkbox
+                label='Make data inputs clearable'
+                checked={this.state.clearable}
+                onChange={this.handleCheckboxChange.bind(this)}
+              />
+            </Header.Subheader>
+          </Header>
+          <DateTimeForm clearable={this.state.clearable} />
+        </Grid.Column>
+        <Grid.Column>
+          <h2>Inline</h2>
+          <DateTimeFormInline />
+        </Grid.Column>
+      </Grid>
     );
   }
 
